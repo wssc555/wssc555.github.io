@@ -29,7 +29,7 @@ cv.destroyAllWindows()
 
 上面messi_2.jpg是需要修复的图片，而mask2.png是掩模图片，这张图片的作用是指定图片损坏的位置，该图片只有黑白两色，白色就是损坏的地方。掩模图片和原图的大小(即宽高)必须完全一致，否则会报错。
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085445318-1622440239.jpg)
+![img](https://wssc555.github.io/img/remove_water_1.jpg)
 
 第一张图像是原图。第二个图像是mask(掩模)。第三个图像是第一个算法的结果，最后一个图像是第二个算法的结果。
 
@@ -37,7 +37,7 @@ cv.destroyAllWindows()
 
 像这样的：
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085505037-1131319790.jpg)
+![img](https://wssc555.github.io/img/remove_water_2.jpg)
 
 **2. mask图像怎么创建**
 
@@ -61,7 +61,7 @@ _1. 打开图像编辑软件：你可以使用任何图像编辑软件，如Phot
 
 学会了吧？然后，让我展示一下真正的技术：
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085531405-1129053068.png)
+![img](https://wssc555.github.io/img/remove_water_3.jpg)
 
 呐，这就是我根据上面的图片创建的掩模图像。
 
@@ -82,7 +82,7 @@ remove_watermark("original_image.jpg", "mask.png", "output_image.jpg")
 
 看一下效果吧：
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085547946-2087577522.jpg)
+![img](https://wssc555.github.io/img/remove_water_4.jpg)
 
 这效果，真是一言难尽，你说它没去吧，它的确没有水印了;你说它去了吧，这还不如不去…
 
@@ -90,12 +90,12 @@ remove_watermark("original_image.jpg", "mask.png", "output_image.jpg")
 
 于是，让我再展示一下真正的技术:
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085600416-1419103417.png)
+![img](https://wssc555.github.io/img/remove_water_5.jpg)
 
 我把水印提取出来做mask这下够精确了吧。
 
 再看效果：
-![img](2024-12-27-removepicwater.assets/2666229-20240605085619638-491186383.jpg)
+![img](https://wssc555.github.io/img/remove_water_6.jpg)
 
 这玩意，不能说跟原图一模一样，那也的确是没啥差别。我觉得这不是mask文件的问题，mask文件太精确不是好事，应该还是修复算法的问题。
 
@@ -109,21 +109,21 @@ remove_watermark("original_image.jpg", "mask.png", "output_image.jpg")
 
 遗憾的是：这两个，无论用哪一个，你都逃不掉创建mask。为什么不能通过机器学习自己识别水印创建mask呢？Watermark-Removal-Pytorch项目的README中也给出了解释：
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085713214-1140022539.png)
+![img](https://wssc555.github.io/img/remove_water_7.jpg)
 
 总的来说: 做水印识别代价太大，而且效果不好。
 
 当我想试试这两个项目的时候，又发现了另外一个项目：iopaint！这个有web界面可以直接在本地跑起来，而且可以下载训练好的模型直接用！于是我装起来试了一下：
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085634181-1006576589.png)
+![img](https://wssc555.github.io/img/remove_water_8.jpg)
 
 直接涂在水印上就可以去除水印，可以涂一个去一个，也可以全部涂好一起去，一起去除要花得时间长一些。
 
 去除的结果是这样的：
-![img](2024-12-27-removepicwater.assets/2666229-20240605085655496-1636380620.jpg)
+![img](https://wssc555.github.io/img/remove_water_9.jpg)
 这个效果在我看来已经是非常不错了。还有一个让人惊喜的地方是，它还可以下载mask文件！
 
-![img](2024-12-27-removepicwater.assets/2666229-20240605085646581-81855927.png)
+![img](https://wssc555.github.io/img/remove_water_10.jpg)
 
 有了mask文件你就可以批量去除水印了，当然了，你所有图片水印的位置要都一样。我试了一下，某房产网站的图片水印的位置也都是一样的。如果它不升级更新，你可以用一个mask文件去除水印
 
