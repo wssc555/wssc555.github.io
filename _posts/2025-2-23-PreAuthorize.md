@@ -1,5 +1,5 @@
 ---
-title: @PreAuthorize注解自定义
+title: PreAuthorize注解自定义
 tags: Java
 
 ---
